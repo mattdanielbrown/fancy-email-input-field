@@ -7,12 +7,22 @@
 
 //** IMPORT GOOGLE FONTS REFERENCE
 @import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600';
+// ============================================================================
+//	Styling for email input --- This is the SCSS version.
+//	The main HTML file references the COMPILED CSS VERSION, NOT THIS FILE.
+//
+//	So if changes are made to this file, be sure to re-compile the CSS.
+// ============================================================================
+
+//** IMPORT GOOGLE FONTS REFERENCE
+// @import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600';
 
 //** variables
 $background: #f5f6fa;
 $text: #9c9c9c;
 $input-bg-color: #fff;
 $input-text-color: #a3a3a3;
+$input-placeholder-text-color: rgba(#8091F1, 0.5);
 $button-bg-color: #7f8ff4;
 $button-text-color: #fff;
 
@@ -43,10 +53,12 @@ a {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	
 }
 
 .uppercase {
-	text-transform: uppercase;
+	// text-transform: uppercase;
+	text-transform: none;
 }
 
 //** button
@@ -56,7 +68,7 @@ a {
 	color: inherit;
 	font: inherit;
 	border: 0;
-	outline: 0;
+	// outline: 0;
 	padding: 0;
 	transition: all 200ms ease-in;
 	cursor: pointer;
@@ -76,6 +88,10 @@ a {
 			background: $button-bg-color;
 			box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, .2);
 		}
+		&:focus {
+			background: rgba(darken($button-bg-color, 5%), 1);
+			outline: 0;
+		}
 	}
 	
 	&--inside {
@@ -86,13 +102,45 @@ a {
 //** form
 .form {	
 	&__field {
-		width: 360px;
+		// width: 360px;
+		width: 380px;
 		background: #fff;
 		color: $input-text-color;
 		font: inherit;
 		box-shadow: 0 6px 10px 0 rgba(0, 0, 0 , .1);
 		border: 0;
-		outline: 0;
+		// outline: 0;
 		padding: 22px 18px;
+		
+		
+		transition: all .4s;
+	
+		&:hover {
+			background: darken($input-bg-color, 4%);
+		}
+		&:active {
+			
+		}
+		&:focus {
+			outline: 0;
+			background: rgba(darken($button-bg-color, 5%), 0.05);
+		}
+		
 	}
+}
+
+::-webkit-input-placeholder {
+   color: $input-placeholder-text-color;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: $input-placeholder-text-color;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: $input-placeholder-text-color;  
+}
+
+:-ms-input-placeholder {  
+   color: $input-placeholder-text-color;  
 }
