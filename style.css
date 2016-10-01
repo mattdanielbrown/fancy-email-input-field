@@ -5,7 +5,7 @@
 :root {
   background: #f5f6fa;
   color: #9c9c9c;
-  font: 1rem "PT Sans", sans-serif;
+  font: 1rem "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 html,
@@ -42,7 +42,7 @@ a:hover {
 }
 
 .uppercase {
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .btn {
@@ -51,7 +51,6 @@ a:hover {
   color: inherit;
   font: inherit;
   border: 0;
-  outline: 0;
   padding: 0;
   -webkit-transition: all 200ms ease-in;
   transition: all 200ms ease-in;
@@ -71,17 +70,47 @@ a:hover {
   background: #7f8ff4;
   box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, 0.2);
 }
+.btn--primary:focus {
+  background: #687af2;
+  outline: 0;
+}
 .btn--inside {
   margin-left: -96px;
 }
 
 .form__field {
-  width: 360px;
+  width: 380px;
   background: #fff;
   color: #a3a3a3;
   font: inherit;
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
   border: 0;
-  outline: 0;
   padding: 22px 18px;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+.form__field:hover {
+  background: whitesmoke;
+}
+.form__field:focus {
+  outline: 0;
+  background: rgba(104, 122, 242, 0.05);
+}
+
+::-webkit-input-placeholder {
+  color: rgba(128, 145, 241, 0.5);
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: rgba(128, 145, 241, 0.5);
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: rgba(128, 145, 241, 0.5);
+}
+
+:-ms-input-placeholder {
+  color: rgba(128, 145, 241, 0.5);
 }
